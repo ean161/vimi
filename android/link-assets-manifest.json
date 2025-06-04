@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/CherryBombOne-Regular.ttf",
+      "sha1": "3cff461d1184264a261d62abce5d017d445411e8"
+    },
+    {
+      "path": "src/assets/fonts/Comfortaa-VariableFont_wght.ttf",
+      "sha1": "9f37fc03e23bbe3a73a74cd51676f198cfe171ca"
+    },
+    {
+      "path": "src/assets/fonts/DarkerGrotesque-VariableFont_wght.ttf",
+      "sha1": "9e00dbf4b685e7c3081abf607aedf2290349777f"
+    }
+  ]
+}
