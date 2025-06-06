@@ -9,7 +9,7 @@ const homeStyle = StyleSheet.create({
         title: {
             fontFamily: "CherryBombOne-Regular",
             fontSize: 50,
-            // color: Colors.$white
+            color: "black"
         },
         icon: {
             backgroundColor: Colors.grey50,
@@ -26,22 +26,23 @@ const homeStyle = StyleSheet.create({
         }
     },
     room: {
-        backgroundColor: "white",
         borderRadius: 20,
         flexDirection: "row",
-        padding: 16,
+        paddingVertical: 10,
         alignItems: "center",
-        marginBottom: 10,
         count: {
-            backgroundColor: "#71a5de",
-            width: 60,
-            color: "white",
-            paddingVertical: 2,
-            paddingHorizontal: 10,
-            borderRadius: 30,
-            textAlign: "center"
+            // backgroundColor: "#010200",
+            // width: 60,
+            color: "grey",
+            // paddingVertical: 2,
+            // paddingHorizontal: 10,
+            // borderRadius: 30,
+            // textAlign: "center"
         },
         joinBtn: {
+            width: 30,
+            height: 30,
+            resizeMode: "cover",
             position: "absolute",
             right: 0
         },

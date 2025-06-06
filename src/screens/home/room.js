@@ -16,8 +16,8 @@ const Room = ({ title, thumbnail, desc, count}) => {
                 style={homeStyle.room.thumbnail}
             />
             <View>
-                <Text text70 marginB-2>{title}</Text>
-                <Text marginB-3 text100 style={homeStyle.room.count}>3 nguời</Text>
+                <Text text60BO text marginB-4>{title}</Text>
+                <Text text style={homeStyle.room.count}>3 người đang tham gia</Text>
             </View>
             <Image
                 source={require("./../../assets/icon/call.png")}

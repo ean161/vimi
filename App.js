@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 Typography.loadTypographies({
     text: {
-        fontFamily: "Comfortaa"
+        fontFamily: "DarkerGrotesque"
     }
 });
 
