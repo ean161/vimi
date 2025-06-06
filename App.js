@@ -1,12 +1,19 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Typography } from "react-native-ui-lib";
 import Toast from "react-native-toast-message";
 
 import toastConfig from "./src/utils/toastConfig";
 import Home from "./src/screens/home";
 
 const Stack = createStackNavigator();
+
+Typography.loadTypographies({
+    text: {
+        fontFamily: "Comfortaa"
+    }
+});
 
 const App = () => {
 	return (

@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
+import { Colors } from "react-native-ui-lib";
 
 const commonStyle = StyleSheet.create({
 	wrapper: {
 		flex: 1,
 		padding: 16,
+		paddingHorizontal: 20,
 		height: "100%"
 	},
 	container: {
@@ -41,7 +43,7 @@ const commonStyle = StyleSheet.create({
             backgroundColor: "#4CAF50"
         },
         error: {
-            backgroundColor: "#FF5722"
+            backgroundColor: Colors.$backgroundDangerHeavy
         }
 	}
 });
