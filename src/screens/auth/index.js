@@ -1,4 +1,6 @@
 import { React, useState, useEffect, useContext } from "react";
+import { PermissionsAndroid, Platform } from "react-native";
+import { check, request, PERMISSIONS, RESULTS } from "react-native-permissions";
 import { View, Text, Button } from "react-native-ui-lib";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
@@ -6,7 +8,7 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 
-import { GOOGLE_IOS_CLIENT_ID } from '@env';
+import { GOOGLE_ANDROID_CLIENT_ID, GOOGLE_IOS_CLIENT_ID } from '@env';
 
 import commonStyle from "../../theme/commonStyle";
 import authStyle from "../../theme/authStyle";
@@ -22,10 +24,30 @@ GoogleSignin.configure({
 });
 
 const Auth = ({ navigation }) => {
-    const { socketRef, events, isConnected } = useContext(SocketContext)
+    const { socketRef, events, isConnected } = useContext(SocketContext);
     const { user, setUser } = useContext(UserContext);
 
     console.log(isConnected);
+
+    async function isPermissionGranted() {
+        const permission = Platform.select({
+            ios: PERMISSIONS.IOS.MICROPHONE,
+            android: PERMISSIONS.ANDROID.RECORD_AUDIO,
+        });
+
+        const status = await check(permission);
+
+        if (status === RESULTS.GRANTED) {
+            return true;
+        }
+
+        if (status === RESULTS.DENIED) {
+            const result = await request(permission);
+            return result === RESULTS.GRANTED;
+        }
+
+        return false;
+    }
 
     const signIn = async () => {
         try {
@@ -47,6 +69,18 @@ const Auth = ({ navigation }) => {
     };
 
     const logged = async (login, silent = false) => {
+        const grantPer = await isPermissionGranted();
+
+        if (!grantPer) {
+            Toast.show({
+                type: "error",
+                text1: "Vimi",
+                text2: "Bạn cần cấp quyền trong phần \"Cài đặt\" để tiếp tục",
+            });
+
+            return;
+        }
+
         socketRef.current?.send(JSON.stringify({
             type: "login",
             data: login.data.user

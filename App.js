@@ -7,6 +7,7 @@ import Toast from "react-native-toast-message";
 import toastConfig from "./src/utils/toastConfig";
 import Auth from "./src/screens/auth";
 import Home from "./src/screens/home";
+import Voice from "./src/screens/voice";
 import { UserProvider } from "./src/context/userContext";
 import { SocketProvider } from "./src/context/socketContext";
 
@@ -35,6 +36,14 @@ const App = () => {
 						<Stack.Screen
 							name="Home"
 							component={Home}
+							options={{
+								headerShown: false,
+								statusBarHidden: true
+							}}
+						/>
+						<Stack.Screen
+							name="Voice"
+							component={Voice}
 							options={{
 								headerShown: false,
 								statusBarHidden: true

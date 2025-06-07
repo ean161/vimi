@@ -6,6 +6,7 @@ import { SegmentedControl } from "react-native-ui-lib";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Toast from "react-native-toast-message";
 import { UserContext } from "./../../context/userContext";
+import { SocketContext } from "../../context/socketContext";
 
 import commonStyle from "../../theme/commonStyle";
 import Nav from "./nav";
@@ -13,9 +14,30 @@ import Room from "./room";
 import Storage from "../../utils/storage";
 
 const Home = ({ navigation }) => {
+    const { socketRef, events, isConnected } = useContext(SocketContext);
     const { user, setUser } = useContext(UserContext);
 
     const [tab, setTab] = useState(0);
+    const [listRoom, setListRoom] = useState([]);
+
+    useEffect(() => {
+        const event = events[events.length - 1];
+        console.log(event);
+
+        switch (event?.type) {
+            case "list_room":
+                setListRoom(event?.data);
+                break;
+            default:
+                break;
+        }
+    }, [events]);
+
+    useEffect(() => {
+        socketRef.current?.send(JSON.stringify({
+            type: "get_rooms"
+        }));
+    }, []);
 
     return (
         <LinearGradient
@@ -57,18 +79,18 @@ const Home = ({ navigation }) => {
                     }}
                     segmentLabelStyle={{
                         fontSize: 16
-                        // fontFamily: "Comfortaa"
                     }}
                 />
                 <ScrollView style={{
                     flex: 1
                 }}>
-                    <Room
-                        title="Phòng của Ân"
-                        thumbnail={user?.avatar}
-                        desc="Room desc is here"
-                        count={3}
-                    />
+                    {listRoom.map((room) => (
+                        <Room
+                            key={room.id}
+                            room={room}
+                            navigation={navigation}
+                        />
+                    ))}
                 </ScrollView>
             </SafeAreaView>
         </LinearGradient>

@@ -86,6 +86,7 @@
 		<string>google</string>
 		<string>com.googleusercontent.apps.349958212940-mrgb2n68d6oeqcjpevuhpjedorvodvdi</string>
 	</array>
-
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires access to the microphone for voice chat.</string>
 </dict>
 </plist>
