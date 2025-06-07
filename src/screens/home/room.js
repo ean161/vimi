@@ -22,7 +22,7 @@ const Room = ({ navigation, room }) => {
             />
             <View>
                 <Text text60BO text marginB-4>{room?.title}</Text>
-                <Text text style={homeStyle.room.count}>3 người đang tham gia</Text>
+                <Text text text90L>3 người đang tham gia</Text>
             </View>
             <Image
                 source={require("./../../assets/icon/call.png")}

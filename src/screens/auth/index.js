@@ -1,7 +1,7 @@
 import { React, useState, useEffect, useContext } from "react";
 import { PermissionsAndroid, Platform } from "react-native";
 import { check, request, PERMISSIONS, RESULTS } from "react-native-permissions";
-import { View, Text, Button } from "react-native-ui-lib";
+import { View, Text, Button, Image } from "react-native-ui-lib";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   GoogleSignin,
@@ -127,13 +127,25 @@ const Auth = ({ navigation }) => {
         <SafeAreaView style={commonStyle.wrapper}>
             <View style={authStyle.container}>
                 <Text
-                    marginB-30
+                    marginB-32
                     style={authStyle.container.title}
                 >Vimi</Text>
                 {
                     (isConnected ? 
-                        <Button style={authStyle.container.loginBtn} onPress={signIn}>
-                            <Text>Login with Google</Text>
+                        <Button
+                            style={authStyle.container.loginBtn}
+                            onPress={signIn}
+                        >
+                            <Image
+                                source={require("./../../assets/icon/google_logo.png")}
+                                style={{
+                                    width: 20,
+                                    height: 20,
+                                    resizeMode: "cover",
+                                    marginRight: 10
+                                }}
+                            />
+                            <Text>Tiếp tục với Google</Text>
                         </Button>
                         : <></>
                     )

@@ -7,7 +7,9 @@ import homeStyle from "../../theme/homeStyle";
 const Nav = ({ user }) => {
     return (
         <View style={homeStyle.nav}>
-            <Text style={homeStyle.nav.title}>Vimi</Text>
+            <View>
+                <Text style={homeStyle.nav.title}>Vimi</Text>
+            </View>
             <View style={homeStyle.nav.avatar}>
                 <Image style={homeStyle.nav.avatar.source} source={{ uri: user?.avatar }} />
             </View>

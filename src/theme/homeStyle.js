@@ -11,11 +11,6 @@ const homeStyle = StyleSheet.create({
             fontSize: 50,
             color: "black"
         },
-        icon: {
-            backgroundColor: Colors.grey50,
-            padding: 6,
-            borderRadius: 50
-        },
         avatar: {
             source: {
                 width: 40,
