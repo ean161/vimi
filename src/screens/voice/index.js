@@ -6,7 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Toast from "react-native-toast-message";
 import { UserContext } from "./../../context/userContext";
 import { SocketContext } from "../../context/socketContext";
-import Icon from 'react-native-vector-icons/FontAwesome6';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import homeStyle from "../../theme/homeStyle";
 import commonStyle from "../../theme/commonStyle";
@@ -73,14 +73,14 @@ const Voice = ({ navigation, route }) => {
                     <Pressable
                         style={{
                             position: "absolute",
-                            right: 16
+                            right: 0
                         }}
                         onPress={() => {
                             navigation.replace("Home");
                         }}
                     >
                         <Icon
-                            name="xmark"
+                            name="chevron-right"
                             size={24}
                             color="grey"
                         />
