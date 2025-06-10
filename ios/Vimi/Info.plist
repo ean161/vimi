@@ -87,6 +87,6 @@
 		<string>com.googleusercontent.apps.349958212940-mrgb2n68d6oeqcjpevuhpjedorvodvdi</string>
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>This app requires access to the microphone for voice chat.</string>
+	<string>Vimi cần quyền truy cập microphone để ghi âm và trò chuyện bằng giọng nói.</string>
 </dict>
 </plist>
