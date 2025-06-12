@@ -1,9 +1,10 @@
 import React from "react";
 import { Image, Pressable } from "react-native";
+
 import { View, Text, Colors } from "react-native-ui-lib";
 
-import commonStyle from "../../theme/commonStyle";
 import homeStyle from "../../theme/homeStyle";
+import commonStyle from "../../theme/commonStyle";
 
 const Room = ({ navigation, room }) => {
     return (
@@ -14,9 +15,9 @@ const Room = ({ navigation, room }) => {
             }}
         >
             <Image
-                source={{uri: room?.thumbnail}}
+                source={{ uri: room?.thumbnail }}
                 width={50}
-                height={50} 
+                height={50}
                 resizeMode="cover"
                 style={homeStyle.room.thumbnail}
             />

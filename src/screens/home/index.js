@@ -1,16 +1,20 @@
-import { React, useState, useEffect, useContext } from "react";
-import { ImageBackground, Image } from "react-native";
 import { ScrollView } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
-import { SegmentedControl } from "react-native-ui-lib";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { ImageBackground, Image } from "react-native";
+import { React, useState, useEffect, useContext } from "react";
+
 import Toast from "react-native-toast-message";
+import { SegmentedControl } from "react-native-ui-lib";
+import LinearGradient from "react-native-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import { UserContext } from "./../../context/userContext";
 import { SocketContext } from "../../context/socketContext";
 
-import commonStyle from "../../theme/commonStyle";
 import Nav from "./nav";
 import Room from "./room";
+
+import commonStyle from "../../theme/commonStyle";
+
 import Storage from "../../utils/storage";
 
 const Home = ({ navigation }) => {
@@ -45,7 +49,7 @@ const Home = ({ navigation }) => {
                 "white",
                 "white"
             ]}
-            style={{flex: 1}}
+            style={{ flex: 1 }}
             start={{
                 x: 1,
                 y: 0
@@ -56,17 +60,17 @@ const Home = ({ navigation }) => {
             }}
         >
             <SafeAreaView style={commonStyle.wrapper}>
-                <Nav user={user}/>
+                <Nav user={user} />
                 <SegmentedControl
                     onChangeIndex={setTab}
                     borderRadius={50}
                     backgroundColor="white"
                     segments={
                         [{
-							label: "Phòng đang hot"
-						}, {
-							label: "Bạn bè"
-						}]
+                            label: "Phòng đang hot"
+                        }, {
+                            label: "Bạn bè"
+                        }]
                     }
                     initialIndex={0}
                     activeColor="black"

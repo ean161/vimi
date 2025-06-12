@@ -1,8 +1,8 @@
-import { View, Text, Image } from "react-native-ui-lib";
 import Icon from "react-native-vector-icons/AntDesign";
+import { View, Text, Image } from "react-native-ui-lib";
 
-import commonStyle from "../../theme/commonStyle";
 import homeStyle from "../../theme/homeStyle";
+import commonStyle from "../../theme/commonStyle";
 
 const Nav = ({ user }) => {
     return (

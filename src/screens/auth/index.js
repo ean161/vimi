@@ -1,23 +1,23 @@
-import { React, useState, useEffect, useContext } from "react";
 import { PermissionsAndroid, Platform } from "react-native";
-import { check, request, PERMISSIONS, RESULTS } from "react-native-permissions";
-import { View, Text, Button, Image } from "react-native-ui-lib";
+import { React, useState, useEffect, useContext } from "react";
+
+import Toast from "react-native-toast-message";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  GoogleSignin,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
-
+import { View, Text, Button, Image } from "react-native-ui-lib";
 import { GOOGLE_ANDROID_CLIENT_ID, GOOGLE_IOS_CLIENT_ID } from '@env';
+import { check, request, PERMISSIONS, RESULTS } from "react-native-permissions";
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 
-import commonStyle from "../../theme/commonStyle";
-import authStyle from "../../theme/authStyle";
-import Storage from "../../utils/storage";
 import googleLogin from "../../api/googleLogin";
 import loginByToken from "../../api/loginByToken";
-import Toast from "react-native-toast-message";
+
 import { UserContext } from "./../../context/userContext";
 import { SocketContext } from "../../context/socketContext";
+
+import authStyle from "../../theme/authStyle";
+import commonStyle from "../../theme/commonStyle";
+
+import Storage from "../../utils/storage";
 
 GoogleSignin.configure({
     iosClientId: GOOGLE_IOS_CLIENT_ID
@@ -54,7 +54,7 @@ const Auth = ({ navigation }) => {
             await GoogleSignin.hasPlayServices();
             const userInfo = await GoogleSignin.signIn();
             const login = await googleLogin(userInfo.data.user);
-            
+
             if (login.status == 1)
                 await logged(login);
             else
@@ -85,7 +85,7 @@ const Auth = ({ navigation }) => {
             type: "login",
             data: login.data.user
         }));
-        
+
         if (!silent)
             Toast.show({
                 type: "success",
@@ -131,7 +131,7 @@ const Auth = ({ navigation }) => {
                     style={authStyle.container.title}
                 >Vimi</Text>
                 {
-                    (isConnected ? 
+                    (isConnected ?
                         <Button
                             style={authStyle.container.loginBtn}
                             onPress={signIn}
@@ -150,7 +150,6 @@ const Auth = ({ navigation }) => {
                         : <></>
                     )
                 }
-                
             </View>
         </SafeAreaView>
     );
