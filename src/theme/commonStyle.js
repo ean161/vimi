@@ -1,12 +1,14 @@
 import { StyleSheet } from "react-native";
 import { Colors } from "react-native-ui-lib";
+import { LIGHT_COLOR } from "../utils/const";
 
 const commonStyle = StyleSheet.create({
 	wrapper: {
 		flex: 1,
 		padding: 16,
 		paddingHorizontal: 20,
-		height: "100%"
+		height: "100%",
+		backgroundColor: LIGHT_COLOR,
 	},
 	container: {
 		padding: 16

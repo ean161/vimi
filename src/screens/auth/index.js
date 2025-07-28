@@ -1,4 +1,4 @@
-import { PermissionsAndroid, Platform } from "react-native";
+import { PermissionsAndroid, Platform, Pressable } from "react-native";
 import { React, useState, useEffect, useContext } from "react";
 
 import Toast from "react-native-toast-message";
@@ -14,20 +14,22 @@ import loginByToken from "../../api/loginByToken";
 import { UserContext } from "./../../context/userContext";
 import { SocketContext } from "../../context/socketContext";
 
-import authStyle from "../../theme/authStyle";
+import styles from "../../theme/authStyle";
 import commonStyle from "../../theme/commonStyle";
 
 import Storage from "../../utils/storage";
-
-GoogleSignin.configure({
-    iosClientId: GOOGLE_IOS_CLIENT_ID
-});
 
 const Auth = ({ navigation }) => {
     const { socketRef, events, isConnected } = useContext(SocketContext);
     const { user, setUser } = useContext(UserContext);
 
     console.log(isConnected);
+
+    useEffect(() => {
+        GoogleSignin.configure({
+            iosClientId: GOOGLE_IOS_CLIENT_ID
+        });
+    }, []);
 
     async function isPermissionGranted() {
         const permission = Platform.select({
@@ -125,31 +127,17 @@ const Auth = ({ navigation }) => {
 
     return (
         <SafeAreaView style={commonStyle.wrapper}>
-            <View style={authStyle.container}>
-                <Text
-                    marginB-32
-                    style={authStyle.container.title}
-                >Vimi</Text>
-                {
-                    (isConnected ?
-                        <Button
-                            style={authStyle.container.loginBtn}
-                            onPress={signIn}
-                        >
-                            <Image
-                                source={require("./../../assets/icon/google_logo.png")}
-                                style={{
-                                    width: 20,
-                                    height: 20,
-                                    resizeMode: "cover",
-                                    marginRight: 10
-                                }}
-                            />
-                            <Text>Tiếp tục với Google</Text>
-                        </Button>
-                        : <></>
-                    )
-                }
+            <View style={styles.card}>
+                <Text style={styles.header.text}>vimi</Text>
+                <Pressable
+                    style={styles.google}
+                    onPress={() => {
+                        signIn();
+                    }}
+                >
+                    <Image style={styles.google.icon} source={require("./../../assets/img/google.png")} />
+                    <Text style={styles.google.text}>Tiếp tục với Google</Text>
+                </Pressable>
             </View>
         </SafeAreaView>
     );

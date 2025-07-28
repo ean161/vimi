@@ -1,18 +1,37 @@
 import { Colors } from "react-native-ui-lib";
 import { StyleSheet } from "react-native";
 
+import { GRAY_COLOR, GRAY_DARK_COLOR } from "../utils/const";
+
 const authStyle = StyleSheet.create({
-    container: {
+    card: {
         flex: 1,
-        justifyContent: "center",
         alignItems: "center",
-        title: {
-            fontFamily: "CherryBombOne-Regular",
+        marginTop: 250,
+    },
+    header: {
+        text: {
             fontSize: 80,
-            color: "black"
+            fontFamily: "CherryBombOne-Regular",
+        }
+    },
+    google: {
+        marginTop: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: GRAY_COLOR,
+        paddingVertical: 5,
+        paddingHorizontal: 10,
+        borderRadius: 30,
+        icon: {
+            width: 20,
+            height: 20,
+            marginRight: 10,
+            resizeMode: "contain",
         },
-        loginBtn: {
-            backgroundColor: "white"
+        text: {
+            color: GRAY_DARK_COLOR,
+            fontSize: 16,
         }
     }
 });

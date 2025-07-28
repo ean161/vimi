@@ -8,7 +8,7 @@ export const SocketProvider = ({ children }) => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        const ws = new WebSocket("ws://160.187.246.117:7010");
+        const ws = new WebSocket("wss://c396e889-9667-4380-bcc4-b15a3674c0c2-00-32bzsdatz4nnx.kirk.replit.dev:3002");
 
         ws.onopen = () => {
             console.log("WebSocket connected");
