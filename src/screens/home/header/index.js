@@ -7,10 +7,10 @@ import { RED_COLOR } from "../../../utils/const";
 const Header = () => {
     return (
         <View style={styles.header}>
-            <View style={styles.header.icon}>
+            {/* <View style={styles.header.icon}>
                 <Image resizeMode="cover" source={require("../../../assets/img/loading.gif")} style={styles.header.icon.src} />
-            </View>
-            <Text style={styles.header.text}>Chạm</Text>
+            </View> */}
+            <Text style={styles.header.text}>vimi</Text>
             <View style={styles.header.icons}>
                 <View style={styles.header.icons.icon}>
                     <Icon style={styles.header.icons.icon.src} name="pen" />

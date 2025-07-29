@@ -27,15 +27,15 @@ const Home = ({ navigation }) => {
     const { socketRef, events, isConnected } = useContext(SocketContext);
     const { user, setUser } = useContext(UserContext);
 
-    const [listRoom, setListRoom] = useState([]);
+    const [postList, setPostList] = useState([]);
 
     useEffect(() => {
         const event = events[events.length - 1];
         console.log(event);
 
         switch (event?.type) {
-            case "list_room":
-                setListRoom(event?.data);
+            case "list_post":
+                setPostList(event?.data);
                 break;
             default:
                 break;
@@ -44,7 +44,7 @@ const Home = ({ navigation }) => {
 
     useEffect(() => {
         socketRef.current?.send(JSON.stringify({
-            type: "get_rooms"
+            type: "get_posts"
         }));
     }, []);
 
@@ -94,7 +94,7 @@ const Home = ({ navigation }) => {
                 <ScrollView style={styles.card}>
                     <CurrentRoom list={listUserRoom} />
                     <Tab tab={tab} setTab={setTab} />
-                    {tab == "post" || tab == "" ? <Posts posts={listUserRoom} setPosts={setListUserRoom} /> : null}
+                    {tab == "post" || tab == "" ? <Posts user={user} posts={postList} setPosts={setPostList} /> : null}
                 </ScrollView>
             </View>
         </SafeAreaView>

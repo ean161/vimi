@@ -1,13 +1,17 @@
-import { View, Text, Image, Pressable } from "react-native";
+import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome6";
+import IonIcon from "react-native-vector-icons/Ionicons";
 import styles from "../../../theme/homeStyle";
-import { GREEN_COLOR } from "../../../utils/const";
+import { BLUE_COLOR, GREEN_COLOR, GREEN_FADED_COLOR, GRAY_COLOR, RED_COLOR, LIGHT_COLOR, RED_FADED_COLOR } from "../../../utils/const";
 
-const Posts = ({posts, setPosts}) => {
+const Posts = ({user, posts, setPosts}) => {
     const handleLike = (index) => {
         const updatedPosts = [...posts];
-        updatedPosts[index].isLiked = !updatedPosts[index].isLiked;
-        updatedPosts[index].likes = updatedPosts[index].likes + 1;
+        if (updatedPosts[index].likes.includes(user.id)) {
+            updatedPosts[index].likes = updatedPosts[index].likes.filter(id => id !== user.id);
+        } else {
+            updatedPosts[index].likes.push(user.id);
+        }
         setPosts(updatedPosts);
     };
     return (
@@ -23,20 +27,20 @@ const Posts = ({posts, setPosts}) => {
                                 <Image source={{uri: item?.avatar}} style={styles.posts.post.author.avatar} />
                                 <View style={styles.posts.post.author.title}>
                                     <Text style={styles.posts.post.author.title.name}>{item?.name}</Text>
-                                    <Text style={styles.posts.post.author.title.createdDate}>3 ngày trước</Text>
+                                    <Text style={styles.posts.post.author.title.createdDate}>{item?.since}</Text>
                                 </View>
                             </View>
                             <View style={styles.posts.post.like}>
-                                <Text style={styles.posts.post.like.count}>{item?.likes} cỏ</Text>
+                                <Text style={styles.posts.post.like.count}>{item?.likes.length} tim</Text>
                                 <Pressable
                                     style={styles.posts.post.like.btn}
                                     onPress={() => handleLike(index)}
                                 >
-                                    <Icon style={[styles.posts.post.like.btn.src, posts[index]?.isLiked == true ? {color: GREEN_COLOR} : {}]} name="clover" />
+                                    <IonIcon style={[styles.posts.post.like.btn.src, item?.likes.includes(user.id) ? {color: RED_COLOR} : {}]} name="heart-sharp" />
                                 </Pressable>
                             </View>
                         </View>
-                        <Text>{item?.caption}</Text>
+                        <Text style={styles.posts.post.cap} >{item?.caption}</Text>
                         <View style={styles.posts.post.attach_image}>
                             {item?.attach_image ? <Image style={styles.posts.post.attach_image.src} source={{uri: item?.attach_image}} /> : null}
                         </View>

@@ -25,9 +25,13 @@ const homeStyle = StyleSheet.create({
             }
         },
         text: {
-            fontSize: 35,
-            marginLeft: 10,
-            fontFamily: "SF Pro Rounded Bold",
+            marginTop: -20,
+            fontSize: 55,
+            // marginLeft: 10,
+            // fontFamily: "SF Pro Rounded Bold",
+            // fontSize: 80,
+            color: DARK_COLOR,
+            fontFamily: "CherryBombOne-Regular",
         },
         icons: {
             top: 5,
@@ -50,7 +54,7 @@ const homeStyle = StyleSheet.create({
         }
     },
     nav: {
-        marginTop: 20,
+        marginTop: 10,
         marginBottom: 10,
         search: {
             height: 45,
@@ -160,16 +164,17 @@ const homeStyle = StyleSheet.create({
     },
     posts: {
         post: {
+            // backgroundColor: GRAY_COLOR,
             marginTop: 10,
-            borderRadius: 10,
+            // borderRadius: 10,
             overflow: "hidden",
             author: {
                 paddingVertical: 10,
                 flexDirection: "row",
                 alignItems: "center",
                 avatar: {
-                    width: 40,
-                    height: 40,
+                    width: 45,
+                    height: 45,
                     marginRight: 10,
                     borderRadius: 30,
                 },
@@ -193,23 +198,27 @@ const homeStyle = StyleSheet.create({
                 alignItems: "center",
                 flexDirection: "row",
                 btn: {
-                    width: 40,
-                    height: 40,
-                    padding: 10,
+                    // width: 40,
+                    // height: 40,
+                    // padding: 10,
                     borderRadius: 30,
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: GRAY_COLOR,
+                    // backgroundColor: GRAY_COLOR,
                     src: {
-                        fontSize: 20,
+                        fontSize: 30,
                         color: GRAY_DARK_COLOR,
                     }
                 },
                 count: {
                     fontSize: 14,
                     color: GRAY_DARK_COLOR,
-                    marginRight: 10,
+                    marginRight: 5,
                 }
+            },
+            cap: {
+                // marginVertical: 5,
+                fontSize: 16,
             },
             attach_image: {
                 paddingTop: 10,

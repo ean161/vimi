@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useRef, useState, useContext } from "react";
 
 import { UserContext } from "./userContext";
+import Toast from "react-native-toast-message";
 
 export const SocketContext = createContext(null);
 
@@ -30,8 +31,14 @@ export const SocketProvider = ({ children }) => {
         };
 
         ws.onerror = (err) => setIsConnected(false);
-        ws.onclose = () => setIsConnected(false);
-
+        ws.onclose = () => {
+            setIsConnected(false);
+            Toast.show({
+                type: "error",
+                text1: "Vimi",
+                text2: "Mất kết nối",
+            });
+        };
 
         return () => ws.close();
     }, []);
