@@ -5,9 +5,10 @@ import Icon from "react-native-vector-icons/FontAwesome6";
 import IonIcon from "react-native-vector-icons/Ionicons";
 
 import Toast from "react-native-toast-message";
-import { SegmentedControl } from "react-native-ui-lib";
+import { SegmentedControl, Shadows } from "react-native-ui-lib";
 import LinearGradient from "react-native-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { FloatingAction } from "react-native-floating-action";
 
 import { UserContext } from "./../../context/userContext";
 import { SocketContext } from "../../context/socketContext";
@@ -22,8 +23,23 @@ import commonStyle from "../../theme/commonStyle";
 import styles from "../../theme/homeStyle";
 
 import Storage from "../../utils/storage";
+import { LIGHT_COLOR, BLUE_COLOR, DARK_COLOR, GRAY_COLOR, GRAY_DARK_COLOR } from "../../utils/const";
 
 const Home = ({ navigation }) => {
+
+    const actions = [
+        {
+            text: "Thay đổi tên",
+            textColor: DARK_COLOR,
+            textBackground: GRAY_DARK_COLOR,
+            icon: <Icon name="heart"/>,
+            name: "bt_accessibility",
+            color: GRAY_COLOR,
+            position: 2
+        },
+    ];
+
+
     const { socketRef, events, isConnected } = useContext(SocketContext);
     const { user, setUser } = useContext(UserContext);
 
@@ -90,13 +106,23 @@ const Home = ({ navigation }) => {
         <SafeAreaView style={commonStyle.wrapper}>
             <View style={styles.card}>
                 <Header searchText={searchText} setSearchText={setSearchText}/>
-                <Search />
+                {/* <Search /> */}
                 <ScrollView style={styles.card}>
                     <CurrentRoom list={listUserRoom} />
                     <Tab tab={tab} setTab={setTab} />
                     {tab == "post" || tab == "" ? <Posts user={user} posts={postList} setPosts={setPostList} /> : null}
                 </ScrollView>
             </View>
+            <FloatingAction
+                actions={actions}
+                color={GRAY_COLOR}
+                buttonSize={50}
+                floatingIcon={<IonIcon name="albums" color={DARK_COLOR} size="30"/>}
+                shadow={{shadowColor: "transparent", shadowRadius: 0}}
+                onPressItem={name => {
+                    
+                }}
+            />
         </SafeAreaView>
     );
 }

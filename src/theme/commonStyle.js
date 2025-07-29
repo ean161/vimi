@@ -5,7 +5,7 @@ import { LIGHT_COLOR } from "../utils/const";
 const commonStyle = StyleSheet.create({
 	wrapper: {
 		flex: 1,
-		padding: 16,
+		paddingTop: 16,
 		paddingHorizontal: 20,
 		height: "100%",
 		backgroundColor: LIGHT_COLOR,

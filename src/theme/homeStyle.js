@@ -1,15 +1,18 @@
 import { Colors } from "react-native-ui-lib";
 import { StyleSheet } from "react-native";
 
-import { GRAY_COLOR, GRAY_DARK_COLOR, DARK_COLOR, GREEN_FADED_COLOR, GREEN_COLOR } from "../utils/const";
+import { BLUE_COLOR, GRAY_COLOR, GRAY_DARK_COLOR, DARK_COLOR, GREEN_FADED_COLOR, GREEN_COLOR } from "../utils/const";
 
 const homeStyle = StyleSheet.create({
     card: {
         flex: 1,
     },
     header: {
+        marginBottom: 10,
         flexDirection: "row",
         alignItems: "center",
+        justifyContent: "flex-end",
+        // backgroundColor: BLUE_COLOR,
         icon: {
             width: 50,
             height: 50,
@@ -25,18 +28,18 @@ const homeStyle = StyleSheet.create({
             }
         },
         text: {
-            marginTop: -20,
-            fontSize: 55,
+            marginTop: 10,
+            fontSize: 40,
             // marginLeft: 10,
-            // fontFamily: "SF Pro Rounded Bold",
+            fontFamily: "SF Pro Rounded Bold",
             // fontSize: 80,
-            color: DARK_COLOR,
-            fontFamily: "CherryBombOne-Regular",
+            color: BLUE_COLOR,
+            // fontFamily: "CherryBombOne-Regular",
         },
         icons: {
-            top: 5,
-            right: 0,
-            position: "absolute",
+            // top: 5,
+            // right: 0,
+            // position: "absolute",
             flexDirection: "row",
             icon: {
                 width: 40,
@@ -54,7 +57,7 @@ const homeStyle = StyleSheet.create({
         }
     },
     nav: {
-        marginTop: 10,
+        marginTop: 20,
         marginBottom: 10,
         alignItems: "center",
         marginHorizontal: 16,

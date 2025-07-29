@@ -10,7 +10,7 @@ const Header = () => {
             {/* <View style={styles.header.icon}>
                 <Image resizeMode="cover" source={require("../../../assets/img/loading.gif")} style={styles.header.icon.src} />
             </View> */}
-            <Text style={styles.header.text}>vimi</Text>
+            {/* <Text style={styles.header.text}>vimi</Text> */}
             <View style={styles.header.icons}>
                 <View style={styles.header.icons.icon}>
                     <Icon style={styles.header.icons.icon.src} name="pen" />
