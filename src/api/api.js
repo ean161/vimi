@@ -20,6 +20,7 @@ const API = {
     },
 
     async post(url, payload) {
+        console.log(url, payload);
         try {
             const response = await fetch(url, {
                 method: "POST",

@@ -4,9 +4,9 @@ import { React, useState, useEffect, useContext } from "react";
 import Toast from "react-native-toast-message";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, Button, Image } from "react-native-ui-lib";
-import { GOOGLE_ANDROID_CLIENT_ID, GOOGLE_IOS_CLIENT_ID } from '@env';
+import { GOOGLE_ANDROID_CLIENT_ID, GOOGLE_IOS_CLIENT_ID } from "@env";
 import { check, request, PERMISSIONS, RESULTS } from "react-native-permissions";
-import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, statusCodes } from "@react-native-google-signin/google-signin";
 
 import googleLogin from "../../api/googleLogin";
 import loginByToken from "../../api/loginByToken";
