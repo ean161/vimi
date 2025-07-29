@@ -56,10 +56,12 @@ const homeStyle = StyleSheet.create({
     nav: {
         marginTop: 10,
         marginBottom: 10,
+        alignItems: "center",
+        marginHorizontal: 16,
         search: {
             height: 45,
             borderRadius: 15,
-            paddingVertical: 6,
+            // paddingVertical: 5,
             alignItems: "center",
             flexDirection: "row",
             paddingHorizontal: 10,

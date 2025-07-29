@@ -27,7 +27,8 @@ const Auth = ({ navigation }) => {
 
     useEffect(() => {
         GoogleSignin.configure({
-            iosClientId: GOOGLE_IOS_CLIENT_ID
+            iosClientId: GOOGLE_IOS_CLIENT_ID,
+            webClientId: GOOGLE_ANDROID_CLIENT_ID
         });
     }, []);
 
