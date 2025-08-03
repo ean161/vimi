@@ -1,16 +1,16 @@
 import { Colors } from "react-native-ui-lib";
 import { StyleSheet } from "react-native";
 
-import { BLUE_COLOR, GRAY_COLOR, GRAY_DARK_COLOR, DARK_COLOR, GREEN_FADED_COLOR, GREEN_COLOR } from "../utils/const";
+import { BLUE_COLOR, GRAY_COLOR, GRAY_DARK_COLOR, GRAY_MID_COLOR, DARK_COLOR, GREEN_FADED_COLOR, GREEN_COLOR, RED_COLOR, LIGHT_COLOR } from "../utils/const";
 
 const homeStyle = StyleSheet.create({
     card: {
         flex: 1,
     },
-    postHr: {
-        height: 10,
-        marginTop: 25,
-        backgroundColor: GRAY_COLOR,
+    hr: {
+        height: 5,
+        marginTop: 20,
+        backgroundColor: GRAY_MID_COLOR,
     },
     header: {
         marginBottom: 10,
@@ -89,28 +89,51 @@ const homeStyle = StyleSheet.create({
         }
     },
     tab: {
-        marginTop: 20,
+        bottom: 0,
+        width: "100%",
+        paddingTop: 10,
+        paddingBottom: 25,
         flexDirection: "row",
+        position: "absolute",
         paddingHorizontal: 20,
+        backgroundColor: LIGHT_COLOR,
         justifyContent: "space-between",
         item: {
             borderRadius: 30,
             paddingVertical: 6,
             paddingHorizontal: 20,
-            text: {
+            justifyContent: "center",
+            alignItems: "center",
+            img: {
+                width: 40,
+                height: 40,
+                borderRadius: 30,
+                resizeMode: "cover"
+            },
+            icon: {
                 fontSize: 20,
-                color: DARK_COLOR,
-                fontFamily: "SF Pro Text Bold",
+                color: GRAY_DARK_COLOR,
+            },
+            text: {
+                fontSize: 14,
+                marginTop: 6,
+                color: GRAY_DARK_COLOR,
+                // fontFamily: "SF Pro Text Bold",
             }
         }
     },
     currentRoom: {
-        marginTop: 10,
+        // marginTop: 10,
         paddingHorizontal: 20,
         title: {
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
+            // justifyContent: "space-between",
+            icon: {
+                fontSize: 25,
+                marginLeft: 16,
+                color: BLUE_COLOR,
+            },
             content: {
                 fontSize: 26,
                 color: DARK_COLOR,
@@ -177,13 +200,11 @@ const homeStyle = StyleSheet.create({
         }
     },
     posts: {
+        marginBottom: 60,
         post: {
-            // backgroundColor: GRAY_COLOR,
-            marginTop: 10,
-            // borderRadius: 10,
             overflow: "hidden",
             author: {
-                paddingVertical: 10,
+                paddingTop: 20,
                 flexDirection: "row",
                 alignItems: "center",
                 avatar: {
@@ -220,8 +241,8 @@ const homeStyle = StyleSheet.create({
                     alignItems: "center",
                     justifyContent: "center",
                     src: {
-                        fontSize: 30,
-                        color: GRAY_COLOR,
+                        fontSize: 35,
+                        color: GRAY_MID_COLOR,
                     }
                 },
                 count: {
@@ -232,11 +253,12 @@ const homeStyle = StyleSheet.create({
             },
             cap: {
                 // marginVertical: 5,
+                marginTop: 10,
                 fontSize: 16,
                 paddingHorizontal: 20,
             },
             attach_image: {
-                paddingTop: 10,
+                marginTop: 10,
                 src: {
                     width: "100%",
                     aspectRatio: 2,

@@ -32,7 +32,7 @@ const Posts = ({user, posts, setPosts}) => {
                                     </View>
                                 </View>
                                 <View style={styles.posts.post.like}>
-                                    <Text style={styles.posts.post.like.count}>{item?.likes.length} tim</Text>
+                                    <Text style={[styles.posts.post.like.count, item?.likes.includes(user.id) ? {color: RED_COLOR} : {}]}>{item?.likes.length}</Text>
                                     <Pressable
                                         style={styles.posts.post.like.btn}
                                         onPress={() => handleLike(index)}
@@ -42,11 +42,15 @@ const Posts = ({user, posts, setPosts}) => {
                                 </View>
                             </View>
                             <Text style={styles.posts.post.cap} >{item?.caption}</Text>
-                            <View style={styles.posts.post.attach_image}>
-                                {item?.attach_image ? <Image style={styles.posts.post.attach_image.src} source={{uri: item?.attach_image}} /> : null}
-                            </View>
+                            {
+                                item?.attach_image ? 
+                                    <View style={styles.posts.post.attach_image}>
+                                        {item?.attach_image ? <Image style={styles.posts.post.attach_image.src} source={{uri: item?.attach_image}} /> : null}
+                                    </View>
+                                : null
+                            }
                         </View>
-                        <View style={styles.postHr}></View>
+                        <View style={styles.hr}></View>
                     </View>
                 );
             })}

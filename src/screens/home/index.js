@@ -108,20 +108,20 @@ const Home = ({ navigation }) => {
                 {/* <Search /> */}
                 <ScrollView style={styles.card}>
                     <CurrentRoom list={listUserRoom} />
-                    <Tab tab={tab} setTab={setTab} />
                     {tab == "post" || tab == "" ? <Posts user={user} posts={postList} setPosts={setPostList} /> : null}
                 </ScrollView>
             </View>
-            <FloatingAction
+            <Tab user={user} tab={tab} setTab={setTab} />
+            {/* <FloatingAction
                 actions={actions}
                 color={GRAY_COLOR}
                 buttonSize={50}
-                floatingIcon={<IonIcon name="albums" color={DARK_COLOR} size="30"/>}
+                floatingIcon={<IonIcon name="albums" color={DARK_COLOR} size="30" />}
                 shadow={{shadowColor: "transparent", shadowRadius: 0}}
                 onPressItem={name => {
                     
                 }}
-            />
+            /> */}
         </SafeAreaView>
     );
 }

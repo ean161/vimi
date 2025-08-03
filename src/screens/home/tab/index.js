@@ -1,39 +1,49 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, Image } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome6";
+import IonIcon from "react-native-vector-icons/Ionicons";
 import styles from "../../../theme/homeStyle";
-import { GRAY_COLOR } from "../../../utils/const";
+import { BLUE_COLOR, DARK_COLOR, GRAY_COLOR } from "../../../utils/const";
 
-const Tab = ({tab, setTab}) => {
+const Tab = ({user, tab, setTab}) => {
+    const tabs = [
+        {
+            icon: "bolt-lightning",
+            name: "post",
+            title: "Chung",
+        },
+        {
+            icon: "circle-notch",
+            name: "scan",
+            title: "Kết bạn",
+        },
+        {
+            icon: "headphones-simple",
+            name: "room",
+            title: "Phòng",
+        }
+    ];
+
     return (
         <View style={styles.tab}>
+            {tabs.map((item, index) => {
+                return (
+                    <Pressable
+                        key={index}
+                        style={styles.tab.item}
+                        onPress={() => {
+                            setTab(item?.name);
+                        }}>
+                        <Icon name={item?.icon} style={[styles.tab.item.icon, tab == item?.name ? {color: BLUE_COLOR} : {}]} />
+                        <Text style={[styles.tab.item.text, tab == item?.name ? {color: DARK_COLOR} : {}]}>{item?.title}</Text>
+                    </Pressable>
+                );
+            })}
             <Pressable
-                style={[
-                    styles.tab.item,
-                    tab == "post" ? { backgroundColor: GRAY_COLOR } : {}
-                ]}
+                style={styles.tab.item}
                 onPress={() => {
-                    setTab("post");
+                    setTab("profile");
                 }}>
-                <Text style={styles.tab.item.text}>Bài đăng</Text>
-            </Pressable>
-            <Pressable
-                style={[
-                    styles.tab.item,
-                    tab == "scan" ? { backgroundColor: GRAY_COLOR } : {}
-                ]}
-                onPress={() => {
-                    setTab("scan");
-                }}>
-                <Text style={styles.tab.item.text}>Gần đây</Text>
-            </Pressable>
-            <Pressable
-                style={[
-                    styles.tab.item,
-                    tab == "room" ? { backgroundColor: GRAY_COLOR } : {}
-                ]}
-                onPress={() => {
-                    setTab("room");
-                }}>
-                <Text style={styles.tab.item.text}>Phòng</Text>
+                <Image style={styles.tab.item.img} source={{uri: user.photo}} />
             </Pressable>
         </View>
     );
