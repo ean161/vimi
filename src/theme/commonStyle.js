@@ -6,7 +6,7 @@ const commonStyle = StyleSheet.create({
 	wrapper: {
 		flex: 1,
 		paddingTop: 16,
-		paddingHorizontal: 20,
+		// paddingHorizontal: 20,
 		height: "100%",
 		backgroundColor: LIGHT_COLOR,
 	},

@@ -21,29 +21,32 @@ const Posts = ({user, posts, setPosts}) => {
                     return null;
 
                 return (
-                    <View style={styles.posts.post} key={index}>
-                        <View style={styles.posts.post.authorActions}>
-                            <View style={styles.posts.post.author}>
-                                <Image source={{uri: item?.avatar}} style={styles.posts.post.author.avatar} />
-                                <View style={styles.posts.post.author.title}>
-                                    <Text style={styles.posts.post.author.title.name}>{item?.name}</Text>
-                                    <Text style={styles.posts.post.author.title.createdDate}>{item?.since}</Text>
+                    <View key={index}>
+                        <View style={styles.posts.post}>
+                            <View style={styles.posts.post.authorActions}>
+                                <View style={styles.posts.post.author}>
+                                    <Image source={{uri: item?.avatar}} style={styles.posts.post.author.avatar} />
+                                    <View style={styles.posts.post.author.title}>
+                                        <Text style={styles.posts.post.author.title.name}>{item?.name}</Text>
+                                        <Text style={styles.posts.post.author.title.createdDate}>{item?.since}</Text>
+                                    </View>
+                                </View>
+                                <View style={styles.posts.post.like}>
+                                    <Text style={styles.posts.post.like.count}>{item?.likes.length} tim</Text>
+                                    <Pressable
+                                        style={styles.posts.post.like.btn}
+                                        onPress={() => handleLike(index)}
+                                    >
+                                        <IonIcon style={[styles.posts.post.like.btn.src, item?.likes.includes(user.id) ? {color: RED_COLOR} : {}]} name="heart-sharp" />
+                                    </Pressable>
                                 </View>
                             </View>
-                            <View style={styles.posts.post.like}>
-                                <Text style={styles.posts.post.like.count}>{item?.likes.length} tim</Text>
-                                <Pressable
-                                    style={styles.posts.post.like.btn}
-                                    onPress={() => handleLike(index)}
-                                >
-                                    <IonIcon style={[styles.posts.post.like.btn.src, item?.likes.includes(user.id) ? {color: RED_COLOR} : {}]} name="heart-sharp" />
-                                </Pressable>
+                            <Text style={styles.posts.post.cap} >{item?.caption}</Text>
+                            <View style={styles.posts.post.attach_image}>
+                                {item?.attach_image ? <Image style={styles.posts.post.attach_image.src} source={{uri: item?.attach_image}} /> : null}
                             </View>
                         </View>
-                        <Text style={styles.posts.post.cap} >{item?.caption}</Text>
-                        <View style={styles.posts.post.attach_image}>
-                            {item?.attach_image ? <Image style={styles.posts.post.attach_image.src} source={{uri: item?.attach_image}} /> : null}
-                        </View>
+                        <View style={styles.postHr}></View>
                     </View>
                 );
             })}

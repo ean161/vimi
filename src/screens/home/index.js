@@ -39,7 +39,6 @@ const Home = ({ navigation }) => {
         },
     ];
 
-
     const { socketRef, events, isConnected } = useContext(SocketContext);
     const { user, setUser } = useContext(UserContext);
 

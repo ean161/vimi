@@ -7,10 +7,16 @@ const homeStyle = StyleSheet.create({
     card: {
         flex: 1,
     },
+    postHr: {
+        height: 10,
+        marginTop: 25,
+        backgroundColor: GRAY_COLOR,
+    },
     header: {
         marginBottom: 10,
         flexDirection: "row",
         alignItems: "center",
+        paddingHorizontal: 20,
         justifyContent: "flex-end",
         // backgroundColor: BLUE_COLOR,
         icon: {
@@ -61,6 +67,7 @@ const homeStyle = StyleSheet.create({
         marginBottom: 10,
         alignItems: "center",
         marginHorizontal: 16,
+        paddingHorizontal: 20,
         search: {
             height: 45,
             borderRadius: 15,
@@ -84,11 +91,12 @@ const homeStyle = StyleSheet.create({
     tab: {
         marginTop: 20,
         flexDirection: "row",
+        paddingHorizontal: 20,
         justifyContent: "space-between",
         item: {
             borderRadius: 30,
             paddingVertical: 6,
-            paddingHorizontal: 25,
+            paddingHorizontal: 20,
             text: {
                 fontSize: 20,
                 color: DARK_COLOR,
@@ -98,6 +106,7 @@ const homeStyle = StyleSheet.create({
     },
     currentRoom: {
         marginTop: 10,
+        paddingHorizontal: 20,
         title: {
             flexDirection: "row",
             alignItems: "center",
@@ -197,6 +206,7 @@ const homeStyle = StyleSheet.create({
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "space-between",
+                paddingHorizontal: 20,
             },
             like: {
                 justifyContent: "center",
@@ -209,10 +219,9 @@ const homeStyle = StyleSheet.create({
                     borderRadius: 30,
                     alignItems: "center",
                     justifyContent: "center",
-                    // backgroundColor: GRAY_COLOR,
                     src: {
                         fontSize: 30,
-                        color: GRAY_DARK_COLOR,
+                        color: GRAY_COLOR,
                     }
                 },
                 count: {
@@ -224,6 +233,7 @@ const homeStyle = StyleSheet.create({
             cap: {
                 // marginVertical: 5,
                 fontSize: 16,
+                paddingHorizontal: 20,
             },
             attach_image: {
                 paddingTop: 10,

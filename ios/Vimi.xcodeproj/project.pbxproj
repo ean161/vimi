@@ -10,6 +10,7 @@
 		0C80B921A6F3F58F76C31292 /* libPods-Vimi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Vimi.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2AB5FB942B6446F2A8A810B8 /* DarkerGrotesque-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C28783C6705047BEBCBA53E2 /* DarkerGrotesque-VariableFont_wght.ttf */; };
+		3460E45D2E396C16009E0C8B /* icon_rounded.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460E45C2E396C16009E0C8B /* icon_rounded.png */; };
 		349220C92E38BC3A00DD3979 /* SF-Pro-Display-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 349220972E38BC3200DD3979 /* SF-Pro-Display-ThinItalic.otf */; };
 		349220CA2E38BC3A00DD3979 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 349220982E38BC3200DD3979 /* SF-Pro-Display-Semibold.otf */; };
 		349220CB2E38BC3A00DD3979 /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 349220992E38BC3200DD3979 /* SF-Pro-Text-Black.otf */; };
@@ -69,6 +70,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Vimi/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Vimi/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Vimi/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3460E45C2E396C16009E0C8B /* icon_rounded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_rounded.png; sourceTree = "<group>"; };
 		349220972E38BC3200DD3979 /* SF-Pro-Display-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-ThinItalic.otf"; path = "../src/assets/fonts/SF-Pro-Display-ThinItalic.otf"; sourceTree = "<group>"; };
 		349220982E38BC3200DD3979 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../src/assets/fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		349220992E38BC3200DD3979 /* SF-Pro-Text-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Black.otf"; path = "../src/assets/fonts/SF-Pro-Text-Black.otf"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				349220A72E38BC3400DD3979 /* SF-Pro-Text-ThinItalic.otf */,
 				349220B82E38BC3700DD3979 /* SF-Pro-Text-Ultralight.otf */,
 				349220C32E38BC3900DD3979 /* SF-Pro-Text-UltralightItalic.otf */,
+				3460E45C2E396C16009E0C8B /* icon_rounded.png */,
 				13B07FAE1A68108700A75B9A /* Vimi */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -330,6 +333,7 @@
 				349220CE2E38BC3A00DD3979 /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				349220CF2E38BC3A00DD3979 /* SF-Pro-Rounded-Medium.otf in Resources */,
 				349220D02E38BC3A00DD3979 /* SF-Pro-Display-BoldItalic.otf in Resources */,
+				3460E45D2E396C16009E0C8B /* icon_rounded.png in Resources */,
 				349220D12E38BC3A00DD3979 /* SF-Pro-Display-Black.otf in Resources */,
 				349220D22E38BC3A00DD3979 /* SF-Pro-Text-Regular.otf in Resources */,
 				349220D32E38BC3A00DD3979 /* SF-Pro-Display-BlackItalic.otf in Resources */,
@@ -594,10 +598,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -666,10 +667,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
