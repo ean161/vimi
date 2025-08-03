@@ -37,7 +37,7 @@ const homeStyle = StyleSheet.create({
             marginTop: 10,
             fontSize: 40,
             // marginLeft: 10,
-            fontFamily: "SF Pro Rounded Bold",
+            // fontFamily: "SF Pro Rounded Bold",
             // fontSize: 80,
             color: BLUE_COLOR,
             // fontFamily: "CherryBombOne-Regular",
@@ -118,6 +118,7 @@ const homeStyle = StyleSheet.create({
                 fontSize: 14,
                 marginTop: 6,
                 color: GRAY_DARK_COLOR,
+                fontFamily: "SF Pro Rounded Bold",
                 // fontFamily: "SF Pro Text Bold",
             }
         }
@@ -137,7 +138,7 @@ const homeStyle = StyleSheet.create({
             content: {
                 fontSize: 26,
                 color: DARK_COLOR,
-                fontFamily: "SF Pro Text Bold",
+                fontFamily: "SF Pro Rounded Bold",
             },
             userCount: {
                 height: 26,
@@ -216,6 +217,7 @@ const homeStyle = StyleSheet.create({
                 title: {
                     name: {
                         fontSize: 16,
+                        fontFamily: "SF Pro Rounded Bold",
                     },
                     createdDate: {
                         fontSize: 14,
