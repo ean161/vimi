@@ -230,9 +230,10 @@ const homeStyle = StyleSheet.create({
                 paddingHorizontal: 20,
             },
             like: {
-                justifyContent: "center",
+                marginTop: 10,
                 alignItems: "center",
                 flexDirection: "row",
+                justifyContent: "center",
                 btn: {
                     // width: 40,
                     // height: 40,
@@ -241,7 +242,7 @@ const homeStyle = StyleSheet.create({
                     alignItems: "center",
                     justifyContent: "center",
                     src: {
-                        fontSize: 35,
+                        fontSize: 30,
                         color: GRAY_MID_COLOR,
                     }
                 },
@@ -261,7 +262,7 @@ const homeStyle = StyleSheet.create({
                 marginTop: 10,
                 src: {
                     width: "100%",
-                    aspectRatio: 2,
+                    aspectRatio: 1,
                     resizeMode: "content",
                     
                 }

@@ -2,7 +2,7 @@ import { View, Text, Image } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome6";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import styles from "../../../theme/homeStyle";
-import { RED_COLOR } from "../../../utils/const";
+import { RED_DARK_COLOR } from "../../../utils/const";
 
 const Header = () => {
     return (
@@ -19,7 +19,7 @@ const Header = () => {
                     <Icon style={styles.header.icons.icon.src} name="plus" />
                 </View>
                 <View style={styles.header.icons.icon}>
-                    <Icon style={[styles.header.icons.icon.src, {color: RED_COLOR}]} name="arrow-right-from-bracket" />
+                    <Icon style={[styles.header.icons.icon.src, {color: RED_DARK_COLOR}]} name="arrow-right-from-bracket" />
                 </View>
             </View>
         </View>
